@@ -1,0 +1,530 @@
+/* =====================================================
+   CSS MOBILE - YASMIN LABANCA [VERSÃO FINAL - BARRA FORÇADA]
+   ✅ Botão topo com MAIS espaço do WhatsApp
+   ✅ Barra de progresso FORÇADA a aparecer
+===================================================== */
+
+/* =====================================================
+   DESKTOP: MOSTRA BARRA E BOTÃO, ESCONDE HAMBURGER
+===================================================== */
+@media screen and (min-width: 769px) {
+  .menu-toggle,
+  .menu-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .logo {
+    margin-left: 600px !important;
+  }
+
+  /* FORÇA barra e botão a aparecerem */
+  .scroll-progress {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .back-to-top {
+    display: flex !important;
+  }
+}
+
+/* =====================================================
+   TABLETS
+===================================================== */
+@media screen and (max-width: 1024px) {
+  .content {
+    margin-left: 60px !important;
+    margin-right: 60px !important;
+  }
+
+  #trabalhos .content {
+    margin-right: 60px !important;
+  }
+
+  #servicos .content {
+    margin-left: 60px !important;
+  }
+}
+
+/* =====================================================
+   MOBILE - FORÇA MÁXIMA EM TODOS OS ELEMENTOS
+===================================================== */
+@media screen and (max-width: 768px) {
+  /* ===== RESET ===== */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html,
+  body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ===== BACKGROUND ===== */
+  .background-wrapper {
+    position: relative;
+    background-image: url("../Images/Yasmin6.jpeg") !important;
+    background-size: 100% auto !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    width: 100% !important;
+  }
+
+  .section {
+    position: relative;
+    min-height: 100vh;
+    padding: 120px 30px 80px 30px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* ===== NAVBAR ===== */
+  .navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 0;
+    transition: transform 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 9999 !important;
+  }
+
+  /* ===== BARRA DE PROGRESSO - SUPER FORÇA ===== */
+  .scroll-progress {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 0% !important;
+    height: 4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: linear-gradient(90deg, #d4a5c8, #f0d9ea, #d4a5c8) !important;
+    z-index: 10003 !important;
+    transition: width 0.15s ease !important;
+    box-shadow:
+      0 0 20px rgba(212, 165, 200, 0.9),
+      0 2px 10px rgba(212, 165, 200, 0.6) !important;
+
+    /* FORÇA BRUTAL */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+    will-change: width !important;
+    contain: layout !important;
+  }
+
+  .nav-container {
+    padding: 18px 25px;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-width: 100%;
+  }
+
+  .logo {
+    font-size: 1.05rem !important;
+    margin: 0 !important;
+    color: #fff !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    z-index: 10001;
+  }
+
+  /* ===== HAMBURGER ===== */
+  .menu-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 30px !important;
+    height: 22px !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    z-index: 10001 !important;
+    position: relative !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .menu-toggle span {
+    display: block !important;
+    width: 100% !important;
+    height: 3px !important;
+    background: #fff !important;
+    border-radius: 3px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  /* ===== OVERLAY ===== */
+  .menu-overlay {
+    display: none !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    z-index: 9998 !important;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .menu-overlay.active {
+    display: block !important;
+    opacity: 1 !important;
+  }
+
+  /* ===== MENU LATERAL ===== */
+  .nav-menu {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 280px !important;
+    height: 100vh !important;
+    background: rgba(20, 20, 20, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 35px !important;
+    padding: 40px 30px !important;
+    transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+    z-index: 10000 !important;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-menu.active {
+    right: 0 !important;
+  }
+
+  .nav-menu a {
+    display: block !important;
+    color: #ffffff !important;
+    font-size: 1.3rem !important;
+    font-weight: 400 !important;
+    text-decoration: none !important;
+    padding: 15px 25px !important;
+    text-align: center !important;
+    width: 100% !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .nav-menu a:hover,
+  .nav-menu a:active {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+  }
+
+  .nav-menu.active a {
+    animation: fadeInRight 0.5s ease forwards;
+  }
+
+  .nav-menu.active a:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .nav-menu.active a:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .nav-menu.active a:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .nav-menu.active a:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* ===== CONTEÚDO ===== */
+  .content {
+    display: none !important;
+  }
+
+  #contato .content {
+    display: block !important;
+    width: auto !important;
+    max-width: fit-content !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    transform: translateY(10px);
+  }
+
+  #contato h2 {
+    display: none !important;
+  }
+
+  /* ===== SEÇÕES ===== */
+  #sobre {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+
+  .hero {
+    display: none !important;
+  }
+
+  #trabalhos {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  #trabalhos h2,
+  #trabalhos p,
+  #trabalhos .videos-grid,
+  #trabalhos .video-thumb,
+  #trabalhos .play-icon {
+    display: none !important;
+  }
+
+  #servicos {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  #servicos h2,
+  #servicos p {
+    display: none !important;
+  }
+
+  #contato {
+    padding-top: 80px !important;
+    padding-bottom: 100px !important;
+  }
+
+  #contato .instagram-link {
+    margin-top: 600px !important;
+  }
+
+  #contato .instagram-link a {
+    font-size: 1.05rem !important;
+    padding: 16px 32px !important;
+    gap: 12px !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    background: #fff !important;
+    color: #000 !important;
+    border-radius: 50px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  #contato .instagram-link a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ===== WHATSAPP ===== */
+  .whatsapp-float {
+    width: 60px !important;
+    height: 60px !important;
+    right: 22px !important;
+    bottom: 22px !important;
+    font-size: 2rem !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 9999 !important;
+  }
+
+  /* ===== BOTÃO TOPO - MAIS ESPAÇO DO WHATSAPP ===== */
+  .back-to-top {
+    position: fixed !important;
+    right: 22px !important;
+    bottom: 106px !important; /* 60px (WhatsApp) + 46px espaço = BEM ACIMA */
+    width: 60px !important;
+    height: 60px !important;
+    background: linear-gradient(135deg, #d4a5c8 0%, #c291b8 100%) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 50% !important;
+    font-size: 1.8rem !important;
+    cursor: pointer !important;
+    z-index: 9998 !important;
+    box-shadow:
+      0 10px 30px rgba(212, 165, 200, 0.5),
+      0 0 25px rgba(212, 165, 200, 0.4) !important;
+    transition: all 0.3s ease !important;
+
+    /* FORÇA MÁXIMA */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transform: translateY(20px) !important;
+    visibility: visible !important;
+  }
+
+  .back-to-top.visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  .back-to-top:active {
+    transform: scale(0.92) !important;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    padding: 35px 25px !important;
+    background: rgba(201, 180, 193, 0.95) !important;
+  }
+
+  .footer-text {
+    font-size: 0.8rem !important;
+    line-height: 1.9 !important;
+  }
+
+  /* ===== SCROLLBAR ===== */
+  ::-webkit-scrollbar {
+    width: 3px !important;
+  }
+
+  /* ===== DESABILITA RASTRO ===== */
+  .trail {
+    display: none !important;
+  }
+
+  /* ===== ANIMAÇÕES ===== */
+  .fade {
+    opacity: 0;
+    transform: translateY(35px) !important;
+    transition: all 0.7s ease !important;
+  }
+
+  .fade.show {
+    opacity: 1;
+    transform: translateY(0) !important;
+  }
+}
+
+/* =====================================================
+   MOBILE PEQUENO
+===================================================== */
+@media screen and (max-width: 375px) {
+  .section {
+    padding: 100px 20px 60px 20px;
+  }
+
+  .content {
+    padding: 20px !important;
+  }
+
+  .hero h1,
+  #trabalhos h2,
+  #servicos h2,
+  #contato h2 {
+    font-size: 2rem !important;
+  }
+}
+
+/* =====================================================
+   LANDSCAPE
+===================================================== */
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  .section {
+    min-height: auto !important;
+    padding: 70px 30px 50px 30px !important;
+  }
+}
+
+/* =====================================================
+   SAFE AREAS
+===================================================== */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding-left: max(25px, env(safe-area-inset-left));
+    padding-right: max(25px, env(safe-area-inset-right));
+    padding-top: max(18px, env(safe-area-inset-top));
+  }
+
+  .whatsapp-float {
+    bottom: max(22px, env(safe-area-inset-bottom)) !important;
+    right: max(22px, env(safe-area-inset-right)) !important;
+  }
+
+  .back-to-top {
+    bottom: max(106px, calc(env(safe-area-inset-bottom) + 84px)) !important;
+    right: max(22px, env(safe-area-inset-right)) !important;
+  }
+}
+
+/* =====================================================
+   TOUCH DEVICES
+===================================================== */
+@media (hover: none) and (pointer: coarse) {
+  .nav-menu a:active,
+  .menu-toggle:active {
+    opacity: 0.7;
+  }
+
+  #contato .instagram-link a:active {
+    transform: scale(0.97) !important;
+  }
+
+  .whatsapp-float:active {
+    transform: scale(0.93) !important;
+  }
+
+  .back-to-top:active {
+    transform: scale(0.92) !important;
+  }
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =====================================================
+   FIM
+===================================================== */
